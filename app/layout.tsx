@@ -1,22 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
+import SplashScreen from "@/components/SplashScreen";
+import { SplashProvider } from "@/contexts/SplashContext";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
+const notoSans = Noto_Sans({
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700", "900"],
+  variable: "--font-noto",
 });
 
 export const metadata: Metadata = {
@@ -30,13 +22,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${roboto.className} font-sans ${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
-        <Header />
-        {children}
-        <Footer />
+    <html lang="en" className={notoSans.variable}>
+      <body className="font-sans relative text-white overflow-x-hidden bg-black">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="fixed inset-0 w-full h-full object-cover -z-20"
+        >
+          <source src="/videos/bg.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay tối nhẹ */}
+        <div className="fixed inset-0 bg-black/20 -z-10" />
+        <SplashProvider>
+          <Header />
+          <SplashScreen>{children}</SplashScreen>
+        </SplashProvider>
       </body>
     </html>
   );

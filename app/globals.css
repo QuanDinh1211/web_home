@@ -4,32 +4,52 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary-color: #415ba9;
-  --secondary-color: #e88900;
+  --text-body: #fff;
+  --text-secondary: #b3bac5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/pretendard-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/pretendard-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/pretendard-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/pretendard-latin-800-normal.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/pretendard-latin-900-normal.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-}
-
-.color-primary {
-  color: var(--primary-color);
-}
-
-.color-secondary {
-  color: var(--secondary-color);
+  color: var(--text-body);
+  cursor: default;
+  font-family: "Pretendard", "Noto Sans", serif;
 }
