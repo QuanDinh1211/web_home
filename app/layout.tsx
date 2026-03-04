@@ -4,6 +4,7 @@ import "./globals.css";
 import SplashScreen from "@/components/SplashScreen";
 import { SplashProvider } from "@/contexts/SplashContext";
 import Header from "@/components/Header";
+import AnimationObserver from "@/components/AnimationObserver";
 
 const notoSans = Noto_Sans({
   subsets: ["latin", "vietnamese"],
@@ -33,6 +34,8 @@ export default function RootLayout({
         >
           <source src="/videos/bg.mp4" type="video/mp4" />
         </video>
+
+        <AnimationObserver />
 
         {/* Overlay tối nhẹ */}
         <div className="fixed inset-0 bg-black/20 -z-10" />

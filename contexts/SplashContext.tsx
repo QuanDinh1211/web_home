@@ -20,7 +20,7 @@ interface SplashProviderProps {
 }
 
 export function SplashProvider({ children }: SplashProviderProps) {
-  const [showSplash, setShowSplash] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     const visited = sessionStorage.getItem("visited");

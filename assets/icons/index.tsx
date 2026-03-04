@@ -13,7 +13,7 @@ export const LogoSVG = ({ className = "" }) => (
           dx="1"
           dy="1"
           stdDeviation="0.5"
-          flood-color="rgba(0,0,0,0.8)"
+          floodColor="rgba(0,0,0,0.8)"
         ></feDropShadow>
       </filter>
     </defs>
